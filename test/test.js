@@ -5,7 +5,7 @@ const env = process.env;
 const { onRouteUpdate } = require('../src/gatsby-browser');
 const { onRenderBody } = require('../src/gatsby-ssr');
 
-describe('gatsby-plugin-hubspot', () => {
+describe('gatsby-plugin-hubspot-tracking', () => {
     beforeEach(() => {
         process.env = Object.assign(env, {
             NODE_ENV: 'production',

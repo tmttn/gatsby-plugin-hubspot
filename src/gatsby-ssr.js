@@ -20,7 +20,7 @@ export function onRenderBody({ setPostBodyComponents }, pluginOptions) {
         <script
             type="text/javascript"
             id="hs-script-loader"
-            key={`gatsby-plugin-hubspot`}
+            key={`@tmttn/gatsby-plugin-hubspot-tracking`}
             async
             defer
             src={`//js.hs-scripts.com/${trackingCode}.js`}

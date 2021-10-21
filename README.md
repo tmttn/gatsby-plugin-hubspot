@@ -1,6 +1,6 @@
-# gatsby-plugin-hubspot
+# gatsby-plugin-hubspot-tracking
 
-[![Build Status](https://travis-ci.com/hutsoninc/gatsby-plugin-hubspot.svg?branch=master)](https://travis-ci.com/hutsoninc/gatsby-plugin-hubspot) [![Current npm package version](https://img.shields.io/npm/v/@tmttn/gatsby-plugin-hubspot.svg)](https://www.npmjs.com/package/@tmttn/gatsby-plugin-hubspot)
+[![Build Status](https://travis-ci.com/tmttn/gatsby-plugin-hubspot-tracking.svg?branch=master)](https://travis-ci.com/tmttn/gatsby-plugin-hubspot-tracking) [![Current npm package version](https://img.shields.io/npm/v/@tmttn/gatsby-plugin-hubspot-tracking.svg)](https://www.npmjs.com/package/@tmttn/gatsby-plugin-hubspot-tracking)
 
 A Gatsby plugin to easily add a HubSpot embed code to your site.
 
@@ -8,7 +8,7 @@ A Gatsby plugin to easily add a HubSpot embed code to your site.
 
 ## Installing
 
-`npm install --save @tmttn/gatsby-plugin-hubspot`
+`npm install --save @tmttn/gatsby-plugin-hubspot-tracking`
 
 ## How to use
 
@@ -17,7 +17,7 @@ A Gatsby plugin to easily add a HubSpot embed code to your site.
 module.exports = {
   plugins: [
     {
-      resolve: "@tmttn/gatsby-plugin-hubspot",
+      resolve: "@tmttn/gatsby-plugin-hubspot-tracking",
       options: {
           trackingCode: "1234567",
           respectDNT: true,
