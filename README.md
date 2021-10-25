@@ -22,29 +22,44 @@ module.exports = {
           trackingCode: "1234567",
           respectDNT: true,
           productionOnly: true,
+          region: "eu1"
       },
     },
   ]
 }
 ```
 
-### Options
+## Options
 
-#### respectDNT
+### trackingCode
 
-Type: `boolean`<br/>
-Default: `false`
+>Type: `string`  
+>Default: `undefined`
 
-By enabling this option, visitors with "Do Not Track" enabled will have a `__hs_do_not_track` cookie placed in their browser. This prevents the HubSpot tracking code from sending any information for the visitor.
+*This value is required. Fill in the correct tracking code from your Hubspot account. (Settings > Tracking Code)*
 
-More information about HubSpot cookies and privacy can be found in the [HubSpot Tracking Code API documentation](https://developers.hubspot.com/docs/methods/tracking_code_api/tracking_code_overview).
+### respectDNT
 
-#### productionOnly
+>Type: `boolean`  
+>Default: `false`
 
-Type: `boolean`<br/>
-Default: `true`
+*By enabling this option, visitors with "Do Not Track" enabled will have a `__hs_do_not_track` cookie placed in their browser. This prevents the HubSpot tracking code from sending any information for the visitor.*
 
-Only load the script when `process.env.NODE_ENV` is set to `production`.
+More information about HubSpot cookies and privacy can be found in the [HubSpot Tracking Code API documentation](https://knowledge.hubspot.com/reports/install-the-hubspot-tracking-code).
+
+### productionOnly
+
+> Type: `boolean`  
+> Default: `true`
+
+*Only load the script when `process.env.NODE_ENV` is set to `production`.*
+
+### region
+
+>Type: `string`  
+<Default: `undefined`
+
+*Fill in this value if you want to use another region or the tracking script. The default script points to `js.hs-scripts.com/12345678.js` Change the region to `eu1` to point to the eu tracking script: `js-eu1.hs-scripts.com/12345678.js`*
 
 ## License
 

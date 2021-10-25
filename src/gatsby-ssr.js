@@ -1,45 +1,47 @@
-import React from 'react';
-import { isDefined, oneline } from './utils';
-import defaultOptions from './default-options';
+import React from "react";
+import { isDefined, oneline } from "./utils";
+import defaultOptions from "./default-options";
 
 export function onRenderBody({ setPostBodyComponents }, pluginOptions) {
-    const { productionOnly, respectDNT, trackingCode } = Object.assign(
-        {},
-        defaultOptions,
-        pluginOptions
-    );
+  const { productionOnly, respectDNT, trackingCode, region } = Object.assign(
+    {},
+    defaultOptions,
+    pluginOptions
+  );
 
-    if (
-        (productionOnly && process.env.NODE_ENV !== 'production') ||
-        !isDefined(trackingCode)
-    ) {
-        return;
-    }
+  if (
+    (productionOnly && process.env.NODE_ENV !== "production") ||
+    !isDefined(trackingCode)
+  ) {
+    return;
+  }
 
-    setPostBodyComponents([
-        <script
-            type="text/javascript"
-            id="hs-script-loader"
-            key={`@tmttn/gatsby-plugin-hubspot-tracking`}
-            async
-            defer
-            src={`//js.hs-scripts.com/${trackingCode}.js`}
-            dangerouslySetInnerHTML={{
-                __html: oneline`
+  setPostBodyComponents([
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      key={`@tmttn/gatsby-plugin-hubspot-tracking`}
+      async
+      defer
+      src={`//js${
+        region ? "-" + region : ""
+      }.hs-scripts.com/${trackingCode}.js`}
+      dangerouslySetInnerHTML={{
+        __html: oneline`
                     var _hsq = window._hsq = window._hsq || [];
                     _hsq.push(['setPath', window.location.pathname + window.location.search + window.location.hash]);
                     ${
-                        respectDNT
-                            ? `if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
+                      respectDNT
+                        ? `if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
                         if (window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" || window.external.msTrackingProtectionEnabled()) {
                             _hsq.push(['doNotTrack']);
                         }
                     }`
-                            : ``
+                        : ``
                     }
                     
                 `,
-            }}
-        />,
-    ]);
+      }}
+    />,
+  ]);
 }
