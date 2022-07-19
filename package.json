@@ -1,6 +1,6 @@
 {
   "name": "@tmttn/gatsby-plugin-hubspot-tracking",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "A Gatsby plugin to easily add a HubSpot embed code to your site.",
   "main": "index.js",
   "scripts": {
@@ -31,11 +31,11 @@
     "babel-preset-gatsby-package": "^0.2.9",
     "cross-env": "^6.0.3",
     "jest": "^24.9.0",
-    "react": "^16.4.2"
+    "react": "^18.2.0"
   },
   "peerDependencies": {
     "gatsby": ">= 2.0.0 < 5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
